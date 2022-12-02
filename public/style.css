@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'nerko';
+    src: url('./fonts/NerkoOne-Regular.ttf') format('truetype');
+}
+
+body {
+    background:rgb(222, 222, 222);
+}
+
+* {
+    font-family: 'nerko';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
