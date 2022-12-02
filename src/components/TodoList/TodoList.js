@@ -6,7 +6,7 @@ const TodoList = (props) => {
     return (
         <div className='todoList'>
             <ul>{
-                props.todos.map((todo) => {
+                props.filterTodos.map((todo) => {
                     return (
                         <Todo
                             key={todo.id}
