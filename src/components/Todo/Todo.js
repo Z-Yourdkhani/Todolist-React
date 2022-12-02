@@ -1,26 +1,34 @@
 import React from 'react'
 import './Todo.css'
 
-const Todo = () => {
+const Todo = (props) => {
+
+    const handleDeleteTodo = () => {
+        props.setTodos(props.todos.filter((item) => item.id !== props.todo.id))
+    }
+
+    const handleCompleteTodo = () => {
+        props.setTodos(props.todos.map((item) => {
+            if (item.id === props.todo.id) {
+                return {
+                    ...item, complete: !item.complete
+                }
+            } else {
+                return item
+            }
+        }))
+    }
+
     return (
-        <div className='todo'>
-            <ul className='todoUl'>
-                <li className='todoLi'>
-                    first todo
-                    <div>
-                        <button>complete</button>
-                        <button>delete</button>
-                    </div>
-                </li>
-                <li className='todoLi'>
-                    second todo
-                    <div>
-                        <button>complete</button>
-                        <button>delete</button>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <>
+            <li className={`todoLi ${props.todo.complete?'complete' :''}`}>
+                {props.text}
+                <div>
+                    <button onClick={handleCompleteTodo}>complete</button>
+                    <button onClick={handleDeleteTodo}>delete</button>
+                </div>
+            </li>
+        </>
     )
 }
 

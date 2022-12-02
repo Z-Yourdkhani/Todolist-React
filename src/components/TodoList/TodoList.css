@@ -1,0 +1,11 @@
+.todoList {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .todoList {
+        width: 600px;
+    }
+}
